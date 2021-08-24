@@ -1,0 +1,51 @@
+<ion-header >
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title color="tertiary">
+      Register
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<form (ngSubmit)="regForm()">
+  <ion-item>
+    <ion-label position="floating">First Name</ion-label>
+    <ion-input type="text" [(ngModel)]="fname" name="fname"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Last Name</ion-label>
+    <ion-input type="text" [(ngModel)]="lname" name="lname"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Mobile Number</ion-label>
+    <ion-input type="text" [(ngModel)]="mobile" name="mobile"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Email Address</ion-label>
+    <ion-input type="email" [(ngModel)]="email" name="email"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Description</ion-label>
+    <ion-textarea [(ngModel)]="desc" name="desc"></ion-textarea>
+  </ion-item>
+  <!-- <ion-item>
+    <ion-label position="floating">Hash Tags(Type Without #)</ion-label>
+    <ion-input></ion-input>
+  </ion-item> -->
+  <ion-item>
+  <ion-button expand="full" ion-button color="tertiary" type="submit">Submit</ion-button>
+  </ion-item>
+  <!-- <ion-button expand="full" color="tertiary">Register</ion-button> -->
+    <!--
+      <div *ngIf="selectedItem" padding>
+        You navigated here from <b>{{selectedItem.title }}</b>
+      </div>
+    -->
+</form>
+</ion-content>
+
+

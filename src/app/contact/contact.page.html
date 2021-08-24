@@ -1,0 +1,33 @@
+<ion-header >
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+                <img class="home_head" src="../assets/icon/contact_toolbar_head.png" width="130px" align="middle"/>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+    <form (ngSubmit)="loadContentPage()">
+      <ion-item>
+         <ion-searchbar placeholder="Search Content by mail" type="email" [(ngModel)]="email" name="email"></ion-searchbar>
+      </ion-item>
+    </form>
+
+    <ion-card class="welcome-card" *ngFor="let post of posts">
+      <ion-card-header>
+        <ion-card-title>{{post.subject}}</ion-card-title>
+        <ion-card-subtitle>Name : {{post.name}}</ion-card-subtitle>
+        <ion-card-subtitle>Phone : {{post.phone}}</ion-card-subtitle>
+        <ion-card-subtitle>Email : {{post.email}}</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{post.desc}}</p>
+      </ion-card-content>
+    </ion-card>
+    <ion-fab (click)="presentModal()" vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="md-add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

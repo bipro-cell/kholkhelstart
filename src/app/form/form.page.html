@@ -1,0 +1,69 @@
+<ion-header >
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <img class="home_head" src="../assets/icon/blog.png" width="60px" height="30px" align="middle"/>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<!--   <ion-card hidden>
+    
+    <ion-card-content>
+     <img *ngIf="!fileUrl" src="assets/no-image.jpeg" hidden />
+     <img *ngIf="fileUrl" src="{{fileUrl}}" hidden/> 
+      
+    </ion-card-content>
+  </ion-card>
+<ion-item>
+        <ion-button color="medium" size="large" (click)="takePhoto()">
+          <ion-icon slot="icon-only" name="camera"></ion-icon>
+        </ion-button>
+</ion-item> -->
+<ion-item>
+  <ion-label position="floating">Title</ion-label>
+  <ion-input [(ngModel)]="title"></ion-input>
+</ion-item>
+<!-- <ion-item>
+  <ion-label position="floating">Author's Name</ion-label>
+  <ion-input [(ngModel)]="A"></ion-input>
+</ion-item> -->
+<!-- <ion-item>
+  <ion-label position="floating">Email Address</ion-label>
+  <ion-input [(ngModel)]="email"></ion-input>
+</ion-item> -->
+<ion-item>
+
+  <ion-textarea placeholder="Text Area" auto-grow="true" autofocus="true" spellcheck="true" [(ngModel)]="content"></ion-textarea>
+</ion-item>
+<!-- <re-captcha (resolved)="captchaResolved($event)" siteKey="6Le0FdwUAAAAAB3SLUNtz-N58qirFWHoXLfKpX5H"></re-captcha> -->
+<!-- <button [disabled]="!captchaPassed" ion-button (click)="sendForm()">Submit</button> -->
+<ion-item lines="none">
+<ion-checkbox class="captchatick" [(ngModel)]="myBoolean" (ionChange)="changeBoolean()" color="secondary"></ion-checkbox>
+<ion-text style="padding-left: 0.75rem;">I'm not a Robot</ion-text>
+</ion-item>
+<ion-button [disabled]="!captchaPassed" expand="full" color="tertiary" (click)="newpost()">Publish</ion-button>
+ <!-- <app-google-maps>
+ </app-google-maps> -->
+ <!-- <app-loader-component>
+
+  </app-loader-component> --> 
+
+  <!-- <loader-component>
+
+  </loader-component> -->
+  <!-- <ng-template>
+      <loader-component>
+      </loader-component>    
+  </ng-template> -->
+  <!-- <div class="loader-component">
+    </div> -->
+  <!--
+    <div *ngIf="selectedItem" padding>
+      You navigated here from <b>{{selectedItem.title }}</b>
+    </div>
+  -->
+</ion-content>
+
+

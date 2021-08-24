@@ -1,0 +1,144 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+          <img class="home_head" src="../assets/icon/cities_of_delhi_toolbar_head.png" width="165px" align="middle"/>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+   <ion-item class="accordion vertical">
+    <ion-slides>
+    <ul>
+        <li *ngFor="let post of posts">
+            <input type="radio" id="radio-{{post.ID}}" name="radio-accordion"/>
+            <label class="name_city" for="radio-{{post.ID}}" (click)="toggle()" >{{post.post_title}}</label>
+            <!-- <ion-icon  [name]="visible? 'arrow-dropup-circle' : 'arrow-dropdown-circle'" (click)="toggle()"></ion-icon> -->
+            <hr>
+            <div class="content">
+              <div class="col-md-4" *ngIf='post.post_title  === "Indraprastha"'>
+                <!-- <img src="/assets/red_board_cells/{{post.post_title | titlecase }}/{{i + 1}}.jpg" alt="" /> -->
+                <!-- <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/1.jpg" alt="" routerLink="/post/1834" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/2.jpg" alt="" routerLink="/post/1843" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/3.jpg" alt="" routerLink="/post/1845" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/4.jpg" alt="" routerLink="/post/1847" /> -->
+              </div>
+              <div class="col-md-4" *ngIf='post.post_title  === "Ferozabad"'>
+                
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/1.jpg" alt="" routerLink="/post/1851/564/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/2.jpg" alt="" routerLink="/post/1853/565/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/3.jpg" alt="" routerLink="/post/1855/566/0" />
+                <!-- <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/4.jpg" alt="" routerLink="/post/1905" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/5.jpg" alt="" routerLink="/post/1911" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/6.jpg" alt="" routerLink="/post/1913" /> -->
+              </div>
+              <div class="col-md-4" *ngIf='post.post_title  === "Jahapannah"'>
+                
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/1.jpg" alt="" routerLink="/post/1841/562/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/2.jpg" alt="" routerLink="/post/1849/563/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/3.jpg" alt="" routerLink="/post/1857/567/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/4.jpg" alt="" routerLink="/post/1859/568/0" />
+              </div>
+              <div class="col-md-4" *ngIf='post.post_title  === "Lutyens"'>
+                
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/1.jpg" alt="" routerLink="/post/1915/598/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/2.jpg" alt="" routerLink="/post/1917/599/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/3.jpg" alt="" routerLink="/post/1921/600/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/4.jpg" alt="" routerLink="/post/1927/601/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/5.jpg" alt="" routerLink="/post/1930/603/0" />
+              </div>
+              
+               <div class="col-md-4" *ngIf='post.post_title  === "Mehrauli"'>
+                
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/1.jpg" alt="" routerLink="/post/1795/543/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/2.jpg" alt="" routerLink="/post/1805/545/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/3.jpg" alt="" routerLink="/post/1810/547/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/4.jpg" alt="" routerLink="/post/1812/548/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/5.jpg" alt="" routerLink="/post/1814/549/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/6.jpg" alt="" routerLink="/post/1816/550/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/7.jpg" alt="" routerLink="/post/1818/551/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/8.jpg" alt="" routerLink="/post/1820/552/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/9.jpg" alt="" routerLink="/post/1822/553/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/10.jpg" alt="" routerLink="/post/1828/556/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/11.jpg" alt="" routerLink="/post/1830/557/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/12.jpg" alt="" routerLink="/post/1832/558/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/13.jpg" alt="" routerLink="/post/1864/570/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/14.jpg" alt="" routerLink="/post/1868/572/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/15.jpg" alt="" routerLink="/post/1901/591/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/16.jpg" alt="" routerLink="/post/1907/594/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/17.jpg" alt="" routerLink="/post/1909/595/0" />
+              </div>
+              <div class="col-md-4" *ngIf='post.post_title  === "New delhi"'>
+                
+                <img class="square_box" src="/assets/red_board_cells/Newdelhi/1.jpg" alt="" routerLink="/post/1805/546/0" />
+                <img class="square_box" src="/assets/red_board_cells/Newdelhi/2.jpg" alt="" routerLink="/post/1861/569/0" />
+                <img class="square_box" src="/assets/red_board_cells/Newdelhi/3.jpg" alt="" routerLink="/post/1870/571/0" />
+                <img class="square_box" src="/assets/red_board_cells/Newdelhi/4.jpg" alt="" routerLink="/post/1888/584/0" />
+                <img class="square_box" src="/assets/red_board_cells/Newdelhi/5.jpg" alt="" routerLink="/post/1890/585/0" />
+
+                <img class="square_box" src="/assets/red_board_cells/Newdelhi/6.jpg" alt="" routerLink="/post/1892/587/0" />
+                <img class="square_box" src="/assets/red_board_cells/Newdelhi/7.jpg" alt="" routerLink="/post/1894/588/0" />
+                <img class="square_box" src="/assets/red_board_cells/Newdelhi/8.jpg" alt="" routerLink="/post/1897/589/0" />
+                <img class="square_box" src="/assets/red_board_cells/Newdelhi/9.jpg" alt="" routerLink="/post/1932/604/0" />
+                <img class="square_box" src="/assets/red_board_cells/Newdelhi/10.jpg" alt="" routerLink="/post/1936/606/0" />
+              </div>
+              <div class="col-md-4" *ngIf='post.post_title  === "Shahjahanabad"'>
+                
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/1.jpg" alt="" routerLink="/post/1874/577/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/2.jpg" alt="" routerLink="/post/1876/578/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/3.jpg" alt="" routerLink="/post/1878/579/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/4.jpg" alt="" routerLink="/post/1880/580/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/5.jpg" alt="" routerLink="/post/1882/581/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/6.jpg" alt="" routerLink="/post/1884/582/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/7.jpg" alt="" routerLink="/post/1886/583/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/8.jpg" alt="" routerLink="/post/1847/586/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/9.jpg" alt="" routerLink="/post/1899/590/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/10.jpg" alt="" routerLink="/post/1903/592/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/11.jpg" alt="" routerLink="/post/1934/605/0" />
+              </div>
+              <div class="col-md-4" *ngIf='post.post_title  === "Shergarh"'>
+                
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/1.jpg" alt="" routerLink="/post/1870/573/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/2.jpg" alt="" routerLink="/post/1872/574/0" />
+                
+              </div>
+              <div class="col-md-4" *ngIf='post.post_title  === "Siri"'>
+                
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/1.jpg" alt="" routerLink="/post/1824/554/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/2.jpg" alt="" routerLink="/post/1826/555/0" />
+              </div>
+              <div class="col-md-4" *ngIf='post.post_title  === "Tuglaqabad"'>
+                
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/1.jpg" alt="" routerLink="/post/1808/544/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/2.jpg" alt="" routerLink="/post/1836/560/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/3.jpg" alt="" routerLink="/post/1839/561/0" />
+              </div>
+              <div class="col-md-4" *ngIf='post.post_title  === "Jahapanah"'>
+                
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/1.jpg" alt="" routerLink="/post/1841/562/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/2.jpg" alt="" routerLink="/post/1849/563/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/3.jpg" alt="" routerLink="/post/1857/567/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/4.jpg" alt="" routerLink="/post/1859/568/0" />
+              </div>
+              <div class="col-md-4" *ngIf='post.post_title  === "Civillines"'>
+                
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/1.jpg" alt="" routerLink="/post/1905/593/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/2.jpg" alt="" routerLink="/post/1911/596/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/3.jpg" alt="" routerLink="/post/1913/597/0" />
+                <img class="square_box" src="/assets/red_board_cells/{{post.post_title | titlecase }}/4.jpg" alt="" routerLink="/post/1927/602/0" />
+              </div>
+            </div>
+            <!-- <button (click) = "myClickFunction(post.ID)">Click Me</button> -->
+        </li>
+    </ul>
+     </ion-slides>
+</ion-item>
+  
+    
+  <!--
+    <div *ngIf="selectedItem" padding>
+      You navigated here from <b>{{selectedItem.title }}</b>
+    </div>
+  -->
+</ion-content>

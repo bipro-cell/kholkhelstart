@@ -1,0 +1,127 @@
+<ion-header>
+  <ion-toolbar color="primary" >
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  >
+  <ion-card style="background-image: url('../../assets/icon/quiz-card2.jpg');">
+    <ion-card-header>
+      
+    </ion-card-header>
+    <ion-card-content >
+      
+        <ion-grid *ngIf="quiz_progress_status!=4">
+          <ion-row>
+              <ion-text style="text-align: center;font-family: Verdana; font-weight: bolder; color:black;">{{question}}</ion-text>
+           </ion-row>
+           <ion-row *ngIf="image==''">
+            <!-- <img src="../../assets/icon/noimage.png" width="70%" height="50%"> -->
+            </ion-row>
+            <ion-row *ngIf="image!=''">
+              <img src="../../assets/quiz_question/{{image}}" width="70%" height="50%">
+              </ion-row>
+        </ion-grid>
+        <div style="width:100%;height:100%;" *ngIf="quiz_progress_status==4 && answer_status==true" style="background-color: transparent;">
+          
+                  <table style="width:100%;height:100%; text-align: center;">
+                  <tr style="width:100%;height:100%; text-align: center;">
+                    <img src="../../assets/icon/check1p.svg" >
+                  </tr>
+                  <tr style="width:100%;height:100%; text-align: center;">
+                  <ion-text style="text-align: center; color:black;font-size: large; "> Correct answer</ion-text>
+                  </tr>
+                </table>
+  
+              </div>
+        <div style="width:100%;height:100%;" *ngIf="quiz_progress_status==4 && answer_status==false" style="background-color: transparent;" >
+          
+          <table style="width:100%;height:100%; text-align: center;">
+          <tr style="width:100%;height:100%; text-align: center;">
+            <img src="../../assets/icon/remove1p.svg" >
+          </tr>
+          <tr style="width:100%;height:100%; text-align: center;">
+          <ion-text style="text-align: center; color:black;font-size: large;"> Sorry! Your Answer is Worng.</ion-text>
+          </tr>
+        </table>
+
+      </div>
+        <!-- <ion-item style="width:100%;height:100%;" *ngIf="quiz_progress_status==4 && answer_status==false " >
+          
+          <table style="width:100%;height:100%">
+  
+              <tr style="width:100%;height:70%;text-align: center;" >
+                  <img src="../../assets/icon/remove.svg" >
+              </tr>
+              <tr style="width:100%;height:30%;text-align: center;">
+                <ion-text>Sorry! Your Answer is Worng.</ion-text>
+            </tr>
+          <table>
+  
+        </ion-item> -->
+    </ion-card-content>
+  </ion-card>
+  <ion-item style="width:100%" *ngIf="opt_length>0 && quiz_progress_status==1">
+  <table style="width:100%" >
+    <tr style="width:100%" ><ion-button expand="full" (click)="answergiven('a')" >{{option["a"]}}</ion-button></tr>
+    <tr style="width:100%" ><ion-button expand="full" (click)="answergiven('b')">{{option["b"]}}</ion-button></tr>
+    <tr style="width:100%" ><ion-button expand="full" (click)="answergiven('c')" >{{option["c"]}}</ion-button></tr>
+    <tr style="width:100%"><ion-button expand="full" (click)="answergiven('d')" >{{option["d"]}}</ion-button></tr>
+  </table>
+  </ion-item>
+  <ion-item style="width:100%" *ngIf="opt_length==0 && quiz_progress_status==1">
+    
+      <ion-item>
+        <ion-label position="floating">Your Answer</ion-label>
+        <ion-input type="text" [(ngModel)]="one_word_answer" name="lname"></ion-input>
+      </ion-item>
+      
+       
+    
+    </ion-item>
+    
+    <ion-item *ngIf="opt_length==0 && quiz_progress_status==1" >
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+        <ion-button expand="full" ion-button color="tertiary" type="submit" (click)="answergiven('z')" >Submit</ion-button>
+          </ion-col>
+        <ion-col>        
+          <ion-button expand="full" ion-button color="tertiary" type="submit" (click)="comment()" >Submit and Post</ion-button>
+        </ion-col>
+        </ion-row>
+        </ion-grid>
+    </ion-item>
+
+    
+
+    <ion-item style="width:100%; padding-top:20%;" *ngIf="quiz_progress_status==3">
+      <table style="width: 100%;">
+        <tr style="width:100%">
+          <ion-progress-bar type="indeterminate"></ion-progress-bar>
+          </tr>
+        <br>
+        <br>
+      <tr style="width:100%">
+      <ion-text style="color: black; font-size: large;">Please wait until we compute result</ion-text>
+      </tr>
+      <br>
+      <br>
+      <tr style="width:100%">
+        <ion-progress-bar type="indeterminate" reversed="true"></ion-progress-bar>
+        </tr>
+      
+      
+      
+    </table>
+      </ion-item >
+
+
+      <ion-item style="width:100%" *ngIf="quiz_progress_status==4" >
+        <table style="width:100%" >
+        <tr style="width:100%">
+            <ion-button expand="full" (click)="dismiss()" >Back to the Game</ion-button>
+        </tr>
+      </table>
+      </ion-item>
+      
+</ion-content>

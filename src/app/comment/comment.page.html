@@ -1,0 +1,17 @@
+<ion-content>
+<ion-input [(ngModel)]="postid" hidden>{{postid}}</ion-input>
+<ion-item lines="none">
+  <ion-label position="floating">Name</ion-label>
+  <ion-input [(ngModel)]="name"></ion-input>
+</ion-item>
+<ion-item lines="none">
+  <ion-label position="floating">Email Address</ion-label>
+  <ion-input [(ngModel)]="email"></ion-input>
+</ion-item>
+<ion-item lines="none">
+  <ion-textarea [(ngModel)]="content" placeholder=" Text Area" auto-grow="true" autofocus="true" spellcheck="true"></ion-textarea>
+</ion-item>
+<ion-button (click)="comment()"expand="full" color="tertiary">Comment</ion-button>
+
+</ion-content>
+ 

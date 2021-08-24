@@ -1,0 +1,22 @@
+
+<ion-content >
+    <form (ngSubmit)="logForm()">
+      <ion-item>
+        <ion-input placeholder="Name" type="text" [(ngModel)]="name" name="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Subject" type="text" [(ngModel)]="subject" name="subject"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Email" type="email" [(ngModel)]="email" name="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Phone" type="text" [(ngModel)]="phone" name="phone"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-textarea placeholder="Description" [(ngModel)]="desc" name="desc"></ion-textarea>
+      </ion-item>
+      
+      <ion-button expand="full" color="tertiary" type="submit">Submit</ion-button>
+    </form>
+</ion-content>

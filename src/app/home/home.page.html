@@ -1,0 +1,165 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <img class="home_head" src="../assets/icon/home_toolbar_head.png" width="75px" align="middle"/>
+    
+    <!-- <img class="gameinfo" src="../assets/icon/refresh.png" width="75px" align="middle" width="40px" (click)="doRefresh($event)"/> -->
+    <img class="gameinfo" src="../assets/icon/about.png" width="75px" align="middle" width="40px" (click)="presentModal(true)"/>    
+    <!-- <ion-icon name="md-paper-plane" width="100px"></ion-icon> -->
+  
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+  
+<ion-content color="secondary" padding >
+
+  <div style="width:100%;">
+    <table style="width:100%">
+        <tr style="width:100%">
+          <!-- <td style="text-align: center;" >
+          <img src="../../assets/icon/bank_icon.png" style="width:40px;height:40px; opacity:0.5;">
+            <br>
+            <span style="font-size: larger;font-weight: bolder;" >{{classReference.bank_of_self_discovery}}</span>
+            </td> -->
+          
+          <td style="width:100%">
+            
+            <div style="position: absolute; margin-top: -1%;"  *ngIf="classReference.question_status==false"  >
+              <img src="../../assets/icon/quiz_disable.png" width="10%" height="10%" >
+              
+              <!-- <span style="text-align: right; padding-top: 2%;" *ngIf="classReference.question_status==true" >You have new Question...</span> -->
+            </div>
+            <div style="position: absolute; margin-top: -2.5%;"  *ngIf="classReference.question_status==true"  (click)="openModal(classReference.question,classReference.answer,classReference.option,classReference.quiz_image,classReference.post_id)" >
+              <img src="../../assets/icon/quiz_enable.gif" width="15%" height="15%" >
+              
+              <!-- <span style="text-align: right; padding-top: 2%;" *ngIf="classReference.question_status==true" >You have new Question...</span> -->
+            </div>
+            <div style="position: absolute; margin-top: -0.9%; margin-left:15%;"  *ngIf="classReference.special_move_status==false"  >
+              <img src="../../assets/icon/special_move_off.png" width="11%" height="11%" >
+              
+              <!-- <span style="text-align: right; padding-top: 2%;" *ngIf="classReference.question_status==true" >You have new Question...</span> -->
+            </div>
+            <div style="position: absolute; margin-top: -1.9%; margin-left:15%;"  *ngIf="classReference.special_move_status==true"  (click)="openModal(classReference.question,classReference.answer,classReference.option,classReference.quiz_image,classReference.post_id)" >
+              <img src="../../assets/icon/special_move_on.gif" width="14.5%" height="14.5%" >
+              
+              <!-- <span style="text-align: right; padding-top: 2%;" *ngIf="classReference.question_status==true" >You have new Question...</span> -->
+            </div>
+
+            <div style="position: absolute; margin-top: -1.9%; margin-left:25%;"  *ngIf="classReference.cell_wallet>0"  (click)="transferTreasure()" >
+              <img src="../../assets/icon/special_move_on.gif" width="14.5%" height="14.5%" >
+              
+              <!-- <span style="text-align: right; padding-top: 2%;" *ngIf="classReference.question_status==true" >You have new Question...</span> -->
+            </div>
+
+            <div style="float: none;display: flex;align-items: center; padding-left:70%;">
+              
+            <div>
+              <img src="../../assets/icon/wallet_icon.png" style="width:40px;height:40px; opacity:0.5;" >
+            
+          </div>
+          
+            <div style="padding-left: 7%; text-align: center;">
+            <span style="font-size: large; font-weight: bold; font-family: Arial; text-align: center;"  >{{classReference.wallet}}</span>
+          </div>
+          </div>
+            <!-- <span style="font-size: larger; font-weight: bolder;" >{{classReference.wallet}}</span> -->
+          </td>
+          <td>
+            <!-- <ion-button (click)="changeGameDirections(true)">Change State</ion-button> -->
+          </td>
+        </tr>
+    </table>
+  </div>
+
+
+
+  
+
+  <!-- <ion-slides style="padding-top: 1%;"> -->
+    <!-- <ion-slide> -->
+<ion-refresher slot="fixed" *ngIf="pulldown" (ionRefresh)="doRefresh($event)">
+<ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+      </ion-refresher-content>
+      </ion-refresher>
+           <ion-text class="pull_down" *ngIf="pulldown" style="padding-left:12.5%;">Please pull down to refresh content</ion-text> 
+           <img src="../assets/icon/hand.svg" *ngIf="pulldown" style="height:20%; padding-left:32%;">   
+  <div id="game-canvas" style="padding-top: -15%;"></div>
+  <!-- <img src="/assets/board.jpg" alt="" (click)="openCam()" /> -->
+  <!-- <ion-button  >Open Camera</ion-button> -->
+  <!-- <img src="{{image}}"> -->
+  <!-- <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher> -->
+  
+  
+<!-- </ion-slide> -->
+<!-- <ion-slide>
+    <app-chat></app-chat>
+</ion-slide> -->
+
+
+<!-- </ion-slides> -->
+<!-- <div style="padding-top:20%; ">
+<table style="padding-top: 40%;" *ngIf="classReference.temp_player_array.length>0">
+  <tr>
+  <td *ngFor="let palyerProfile of classReference.temp_player_array">
+    <div (click)="playerWalletTrans(palyerProfile)" >
+      <img [src]="palyerProfile.image" width="15%" height="15%" />
+      <br>
+      <span style="text-align:center;" >{{classReference.playerArray[palyerProfile.player_no].wallet}}</span>
+    </div>
+  </td>
+  </tr>
+</table>
+</div> -->
+
+<!-- <tr *ngFor="let blog of blogs">
+
+<td>
+</td>
+
+</tr> -->
+
+<!-- <img src="../../assets/icon/user_profile_img.svg" > -->
+
+
+<!-- <div style="width:100%; text-align: center; padding-top: 10%;" class="quiz" id="quizid" (click)="openModal(classReference.question,classReference.answer,classReference.option)">
+  <span style="text-align: center;"><img src="../../assets/icon/quiz.png" width="10%" height="10%" ></span>
+  <span style="text-align: center; padding-top: 10%;" *ngIf="classReference.question_status==true" >You have new Question...</span>
+</div> -->
+
+<!-- <ion-item style="width:100%; text-align: center; padding-top: 10%;" >
+  
+</ion-item> -->
+</ion-content>
+
+
+
+<ion-footer class="footer">
+  <ion-toolbar  class="footer_toolbar" color="primary" (click)="presentModal(false)">
+    <div>
+      <img class="up_arrow" src="../assets/icon/up-arrow.svg"  height="20px"  />
+      </div>
+      <div class="footer_para"> 
+      <ion-text color="tertiary" class="total_write"><p class="parafoot">
+          <ion-text><ion-text *ngIf="classReference.cell_wallet>0" style="font-weight: bold;" >Bliss[{{classReference.cell_wallet}}]  </ion-text><b>{{classReference.postname}} : </b></ion-text><ion-text>{{classReference.postdesc}}</ion-text></p>
+      </ion-text>
+    </div>
+  </ion-toolbar>
+</ion-footer>
+
+

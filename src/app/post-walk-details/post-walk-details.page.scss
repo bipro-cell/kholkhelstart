@@ -1,0 +1,77 @@
+.quoteclass{
+	font-weight: bold;
+	font-style: italic;
+	font-family: 'GaramondBold';
+	font-size: 20px;
+	color: black;
+	text-align:left;
+}
+.archclass{
+	font-weight: normal;
+	font-size: 17px;
+	color: #000000;
+	text-align:justify;
+}
+.narraclass{
+	font-weight: normal;
+	font-size: 17px;
+	color: #000000;
+	text-align:justify;
+}
+.referclass{
+	font-weight: normal;
+	font-size: 17px;
+	color: #000000;
+	text-align:left;
+}
+.blank{
+	height: 15%;
+}
+
+.share{
+	margin-left : -2px;
+}
+
+.refertitle{
+	font-weight: bold;
+	text-align: left;
+}
+.narratitle{
+	font-weight: bold;
+	text-align: left;
+}
+.quote{
+	margin-top: 60px;
+}
+.archtitle{
+	font-weight: bold;
+	text-align: left;
+}
+.headerdivider{ 
+  margin-top: 0px;
+  margin-left: -2px;
+  min-height: 0.1px!important;
+}
+.pagetophead{
+}
+.headertitle{
+	text-align: center;
+	padding-bottom: 10px;
+	color: #2e1901;
+}
+.item-content {
+  position: fixed;
+  background-color:#ffffff;
+  text-align:justify;
+}
+.itemgrp{
+	position: fixed;
+	background-color: white;
+	text-align:justify;
+}
+.content-align{
+	text-align:justify;
+}
+.btnback{
+	float: right;
+}
